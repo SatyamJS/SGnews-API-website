@@ -1,16 +1,13 @@
-// window.location.reload()
 network();
-let element = document.querySelector(".text")
-element.addEventListener("focus", (e) => {
-
-    element.className = "textarea-style"
-})
-element.addEventListener("blur", (e) => {
-    element.className = "text"
-})
-
 const h2head = document.querySelector("#h2head")
-let btn = document.querySelector(".btn")
+const element = document.querySelector(".text")
+const btn = document.querySelector(".btn")
+element.addEventListener("keypress",(e)=>{
+if(e.key==="Enter"){
+    btn.click()
+}
+})
+
 btn.addEventListener("click", (e) => {
     if (langCheckbox.checked) {
         
@@ -23,12 +20,13 @@ btn.addEventListener("click", (e) => {
 
 
 
-let card = document.querySelector(".box-item")
-let darkM = document.querySelector("#checkbox")
+const card = document.querySelector(".box-item")
+const darkM = document.querySelector("#checkbox")
 darkM.addEventListener("click", (e) => {
     if (darkM.checked) {
         document.body.style.backgroundColor = "black";
         document.body.style.color = "white";
+            
     }
     else {
         document.body.style.backgroundColor = "white";
@@ -70,14 +68,16 @@ function network(language = "en") {
                 arr.forEach(function (element) {
                     if (element.summary != null && element.media != null) {
                         let box = document.querySelector(".mainbox")
-                        str += `<div  class="box-item" style="width: 21rem;">
-                <img style="filter:hue-rotate(0deg)" src="${element.media}" class="images" width="100%" height="200px" alt="Image not Found">
-                <div class="card-body">
-                <h4 class="news-title" style="color:tomato">Title:<br></h4><span>${element.title}</span>
-                  <p class="card-text" ><strong style="color:tomato">Description:</strong>${element.summary.slice(0, 400) + "..."}</p>
-                  <a href=${element.link} class="link" target="_blank">Read More</a>
-                </div>
-              </div>`;
+                        str += ` <a href=${element.link} class="link" target="_blank"><span class="sourceLink">Details</span></a>
+                        <div  class="box-item" style="width: 18rem;">
+                        <img  src="${element.media}" class="images" width="100%" height="200px" alt="Image not Found">
+                        <div class="card-body">
+                        <strong><span>${element.title}</span></strong>
+                        <p class="card-text" >${element.summary.slice(0, 300) + "..."}</p>
+                        
+                        </div>
+                       
+                        </div>`;
                         box.innerHTML = str;
                     }
                 });
@@ -134,4 +134,5 @@ arrowDown.addEventListener("click", (e) => {
     document.body.scrollTop = 100000000;
     document.documentElement.scrollTop = 1000000000;
 })
+
 

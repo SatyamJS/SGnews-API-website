@@ -7,15 +7,8 @@ body {
     margin:0px;
     padding:0px;
     font-family: 'Ubuntu', sans-serif;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
 }
 #heading{
-    border:2px solid white;
-    border-left:0px;
-    border-right: 0px;
     text-align: center;
     width:10vw;
     display:inline;
@@ -23,12 +16,54 @@ body {
     top:0px;
     left:10px; 
 }
+.nav a{
+    color:white;
+}
+.upper{
+height:10px;
+width:10px;
+border-radius: 50%;
+background-color: white;
+position:absolute;
+left:20px;
+top:12px ;
+animation: logoUp 2s linear alternate infinite;
+}
+.lower{
+    height:5px;
+    width:5px;
+    border-radius: 50%;
+    background-color: white;
+    position:absolute;
+    /* left:20px; */
+    top:60px ;
+    animation: logoDwn 2s linear alternate infinite;
+    
+}
+@keyframes logoUp{
+    to{
+        left:20px;
+    }
+    from{
+        left:120px;
+    }
+}
+@keyframes logoDwn {
+    to{
+left:120px;
+    }
+    from{
+left:20px;
+    }
+}
 .intro{
-    border-bottom:2px solid white;
-    margin:10px;
-    padding:25px;
+    margin:0px auto;
+    font-size: 20px;
+    padding:15px;
     position: absolute;
-    top:70vh;
+    top:30vh;
+    left:10vw;
+    width:400px;
     text-align: center;
 }
 @keyframes float {
@@ -45,115 +80,195 @@ body {
 		transform: translatey(0px);
 	}
 }
-@keyframes BGrotation {
-    0%{
-        filter:hue-rotate(0deg);
-    }
-    100%{
-        filter:hue-rotate(360deg);
-    }
-    
+
+.commonCategories{
+    width:500px;
+    /* height: 500px; */
+    /* border:1px solid black; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    top:0vh;
+    right:10vw;
+
+
 }
-#logoImage{
-    order:2;
-    border:2px solid white;
-    border-top: 0px;
-    box-shadow: 2px 2px 16px black;
-    margin:10px;
-    width:25vw;
-    height:60vh;
-    position:relative;
-    top:10vh;
-    left:60vw;
-    border-radius: 50%;
-    animation: float 3s infinite both;
+.imgDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:600px;
+    flex-wrap: wrap;
+}
+.categories{
+    margin:10px 0px 10px 10px;
+    width:150px;
+    height:200px;
+    opacity:1;
+    /* box-shadow: 0px -1px 6px 0px black; */
+    backface-visibility: hidden;
+    transform: scale(2);
     
+
+}
+.imgText{
+    position:relative;
+    padding:10px;
+    top:-70px;
+    left:20px;
+    font-size: 18px;
+    font-weight: 800;
+    color:white;
+    transition: all 0.5s;
+    pointer-events: none;
+}
+
+.imgContainer{
+    width:150px;
+    height:200px;
+    margin:10px;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+.categories:hover {
+    opacity: 0.5;
+    transition:all 0.3s;
+    transform: scale(1.2);
+}
+.categories:hover + .imgText{
+    opacity:1;
+    top:-180px;
+    border-bottom:1px solid white;
+}
+.container{
+    width:80vw;
+    margin:auto;
 }
 .container h3{
-    margin:5px ;
+    margin:10px auto;
+    padding: 10px;
+    width:300px;
+    text-align: center;
+    font-size: 2rem;
+    background-color:#FE7A15;
+    border-radius: 5px;
+    color:whitesmoke;
 } 
 .nav{
     display:flex;
     flex-direction: column;
-    animation: BGrotation 10s ease infinite;
-    height:90vh;
+    height:100vh;
     transition:all;
     color:white;
-    background-color: tomato;
+    background-image:linear-gradient(to right,#D3DD18,#35BBCA)
 }
 .mainbox{
     border-radius:8px;
+    width:90vw;
     margin-top:10vh;
     margin-bottom:10vh;
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin:10vh auto;
-    justify-content: center;
+    z-index: 98;
 
 }
 .box-item{
-    border:1px solid white;
-    box-shadow: 1px 1px 16px -1px black;
+    box-shadow: 1px 1px 12px -1px black;
     height:auto;
-    margin:20px;
-    overflow:auto;
-    border-radius: 6px;
-    /* z-index: 1; */
-    padding:10px;
+    margin:50px 25px;
+    overflow:hidden;
+    
 }
 
-.images{
-    border-radius: 6px;
-    filter:none;
-}
+
 .btn{
     position: relative;
-    padding:5px;
+    padding:8px;
     margin-top:0.5vh;
     border-radius: 4px;
     color:white;
-    background-color: tomato;
-    border:1px solid tomato;
+    background-color: #FE7A15;
+    border:0;
     
 }
 .btn:hover{
-    box-shadow: 1px 1px 12px black;
-    background-color: white;
-    color:tomato;
-    transition: all 0.7s;
+    background-color: yellowgreen;
+    transition: all 0.5s;
 }
 
 .text{
+    margin:5px;
+    font-size: 24px;
+    width:75vw;
     font-family: 'Ubuntu', sans-serif;
-    outline: none;
-    width:70vw;
+    border:2px solid #FE7A15;
+    padding:20px;  
+    border-radius: 4px;
     
 }
-.textarea-style{
-    font-family: 'Ubuntu', sans-serif;
+input:focus{
     outline: none;
-    border: 3px solid tomato;
-    border-radius: 6px;
-    width:70vw;
 }
+
 .link{
+    align-items: center;
+    position:relative;
+    left:320px;
+    top:20px;
+    height:1px;
+    width:1px;
     color:white;
-    background-color: tomato;
-    padding:4px;
+    background-color: #FE7A15;
+    padding:20px 30px 30px 20px;
+    font-size:12px;
+    font-weight: 800;
     text-decoration: none;
-    border-radius: 4px;
+    border-bottom-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border:3px solid white;
+    transform: scale(1.2);
+    flex-shrink: 10;
+}
+.link:hover{
+    background-color: #D3DD18;
+    transition: all 0.5s;
+    border:3px solid white;
+    transform:rotateZ(45deg) scale(1.2);
+}
+.link span{
+    position:relative;
+    left:-12px;
+}
+.link span:hover{
+    position: relative;
+
 }
 #h2head{
     text-align: center;
     position: static;
+    color:#0191b4;
 }
 #boxbtn{
     visibility:hidden;
 }
+.card-body{
+    position: relative;
+    bottom:0px;
+    left:0;
+    margin:10px 25px;
+
+}
+.card-body p{
+    font-size: 13px;
+}
 .footer{
-    animation: BGrotation 10s ease infinite;
-    background-color:tomato;
+    background-image:linear-gradient(to right,#D3DD18,#35BBCA);
     position: static;
     bottom: 0;
     margin:auto;
@@ -219,7 +334,7 @@ body {
     position:fixed;
     right:10px;
     bottom:10px;
-    background-color: tomato;
+    background-color: #FE7A15;
     color:white;
     border-radius: 6px;
     margin:0px;
@@ -232,7 +347,7 @@ body {
     position:fixed;
     right:10px;
     top:75vh;
-    background-color: tomato;
+    background-color: #FE7A15;
     color:white;
     border-radius: 6px;
     z-index:99;
@@ -248,30 +363,43 @@ body {
 @keyframes loading {
     100%{
         transform: rotateZ(360deg);
-        /* transform: rotateY(180deg); */
     }
-    
+
 }
+
 
 
 .loaderOuter{
-    width: 10vw;
-    height: 20vh;
-    /* border: 0.5px solid black; */
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    margin: 5px auto;
+    margin: 10px auto;
     
 }
 .loaderInner{
-    width:10vw;
-    height:20vh;
-    /* border:1px solid tomato; */
-    border-top:10px solid tomato;
+    width:100px;
+    height:100px;
+    border:25px solid white;
+    animation:loader 4s linear infinite;
     border-radius: 50%;
-    margin: 5px auto;
-    animation:size 1s ease-out infinite ;
     transition: all;
     
+}
+
+
+@keyframes loader{
+    0%,100%{
+        border-top:25px solid #FE7A15
+    }
+    25%{
+        border-right:25px solid #FE7A15
+    }
+    50%{
+        border-bottom:25px solid #FE7A15
+    }
+    75%{
+        border-left:25px solid #FE7A15
+    }
 }
 /* width */
 ::-webkit-scrollbar {
@@ -287,7 +415,7 @@ body {
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: tomato; 
+    background: #FE7A15; 
     border-radius: 6px;
   }
   
@@ -296,32 +424,33 @@ body {
     opacity:0.8; 
   }
 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 450px){
     .container{
         color:white;
+        width:97vw;
         margin: auto;
-        text-align: center;
         height:auto;
         padding: 5px;
         position:sticky;
         top:0;
-        background-color: tomato;
-        border-radius: 6px;
+        background-color: #FE7A15;
         z-index: 99;
     }
     .container h3{
-        margin:3px ;
+        margin-left:5px;
+        padding: 0px;
+        font-size: 12px;
+        text-align: left;
     }
     .container button{
         background-color: white;
-        color:tomato
+        color:#FE7A15
     }
 .loading{
     position:fixed;
     top:50vh;
     left:30vw;
     z-index: 99;
-    
     animation: loading 1.5s ease-in infinite ;
     transition: all;
     
@@ -335,30 +464,28 @@ body {
 
 
 .loaderOuter{
-    width: 40vw;
-    height: 20vh;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    margin: 5px auto;
-    
+    margin:0px;
+        
 }
 .loaderInner{
-    width:40vw;
-    height:20vh;
-    border-top:10px solid tomato;
+    width:50px;
+    height:50px;
+    border-top:10px solid #FE7A15;
     border-radius: 50%;
-    margin: 5px auto;
-    animation:size 1s ease-out infinite ;
     transition: all;
     
 }
 .nav{
     display:flex;
-    height:100vh;
+    height:140vh;
     flex-direction: column;
     animation: BGrotation 10s ease infinite;
     transition:all;
     color:white;
-    background-color: tomato;
+    background-color: #FE7A15;
 }
 #heading{
     text-align: center;
@@ -367,21 +494,43 @@ body {
     top:0px;
     left:10px; 
 }
-#logoImage{
-    order:2;
-    border:2px solid white;
-    border-top: 0px;
+.text{
+    padding:5px;
     width:80vw;
-    height:40vh;
-    position:relative;
-    left:10vw;
-    top:20vh;
-    border-radius: 50%;
-    z-index:-1;
-    animation: float 3s infinite both;
-    transition:all;
-    
 }
+.link{
+    top:80px;
+    left:270px;
+}
+.box-item{
+    margin-left:10px;
+    margin-bottom:0px;
+}
+.intro{
+    top:12vh;
+    width:300px;
+    left:0px;
+}
+.imgDiv{
+    width:350px;
+    right:0px;
+}
+.commonCategories{
+    top:35vh;
+    left:10px;
+    width:300px;
+    margin:auto;
+    margin-left:18px;
+}
+.categories{
+    width:150px;
+}
+.btn:hover{
+    color:white;
+
+}
+
+
 
 @keyframes float {
 	0% {
@@ -399,3 +548,4 @@ body {
 }
     
 }
+
