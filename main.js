@@ -34,7 +34,14 @@ darkM.addEventListener("click", (e) => {
 
     }
 })
-
+let category=document.querySelectorAll(".categories")
+category.forEach((elem)=>{
+    elem.addEventListener("click",(e)=>{
+    element.value=elem.nextElementSibling.innerText
+    network()
+    window.scrollBy(0,700)
+})
+})
 
 
 const langCheckbox = document.querySelector("#lang")
@@ -45,7 +52,7 @@ langCheckbox.addEventListener("click", (e) => {
 
 
 
-function network(language = "en") {
+function network(language = "en",ele="latest") {
     try{
 
     
@@ -60,7 +67,7 @@ function network(language = "en") {
         
         if (this.readyState===4 && this.status == 200) {
             document.querySelector(".loading").style.display="none"
-            h2head.innerText = `Top Headlines related to '${ele}'`
+            h2head.innerText = `Search results based on '${ele}'`
             let content = JSON.parse(this.response);
             if (content.status==="ok") {
                 let arr = Array.from(content.articles)
@@ -112,7 +119,7 @@ let arrowDown = document.querySelector(".arrow-down")
 window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
         arrowUp.style.display = "block";
     }
     else if (document.body.scrollTop > 1000000 || document.documentElement.scrollTop > 1000000) {
