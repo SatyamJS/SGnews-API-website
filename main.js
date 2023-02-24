@@ -75,7 +75,7 @@ function network(language = "en",ele="latest") {
                 arr.forEach(function (element) {
                     if (element.summary != null && element.media != null) {
                         let box = document.querySelector(".mainbox")
-                        str += ` <a href=${element.link} class="link" target="_blank"><span class="sourceLink">Details</span></a>
+                        str += ` 
                         <div  class="box-item" style="width: 18rem;">
                         <img  src="${element.media}" class="images" width="100%" height="200px" alt="Image not Found">
                         <div class="card-body">
@@ -83,6 +83,7 @@ function network(language = "en",ele="latest") {
                         <p class="card-text" >${element.summary.slice(0, 300) + "..."}</p>
                         
                         </div>
+                        <a href=${element.link} class="link" target="_blank"><span class="sourceLink">Details</span></a>
                        
                         </div>`;
                         box.innerHTML = str;

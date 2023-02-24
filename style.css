@@ -2,6 +2,7 @@ html{
     scroll-behavior: smooth;
     margin:0;
     padding:0;
+    /* outline:1px solid red; */
 }
 body {
     margin:0px;
@@ -176,18 +177,22 @@ left:20px;
     flex-wrap: wrap;
     margin:10vh auto;
     z-index: 98;
+    justify-content: center;
 
 }
 .box-item{
     box-shadow: 1px 1px 10px -1px black;
-    /* height:auto; */
-    margin:50px 25px;
+    min-height:400px;
+    margin:50px 35px;
     overflow:hidden;
     transition: all 0.7s;
     
 }
 .box-item:hover{
     box-shadow: 1px 1px 35px -1px grey;
+}
+.box-item:hover > img{
+    opacity: 0.9;
 }
 
 
@@ -222,33 +227,28 @@ input:focus{
 
 .link{
     align-items: center;
-    position:relative;
-    left:320px;
-    top:20px;
+    position:sticky;
+    left:220px;
+    bottom: 10px;;
     height:1px;
     width:1px;
     color:white;
     background-color: #FE7A15;
-    padding:20px 30px 30px 20px;
+    padding:20px 10px;
     font-size:12px;
     font-weight: 800;
     text-decoration: none;
-    border-bottom-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
+    border-radius: 50%;
     border:3px solid white;
-    transform: scale(1.2);
-    flex-shrink: 10;
+    transition: all 0.5s;
 }
 .link:hover{
     background-color: #D3DD18;
-    transition: all 0.5s;
     border:3px solid white;
-    transform:rotateZ(45deg) scale(1.2);
 }
 .link span{
     position:relative;
-    left:-12px;
+    left:0px;
 }
 .link span:hover{
     position: relative;
@@ -434,7 +434,7 @@ input:focus{
     opacity:0.8; 
   }
 
-@media only screen and (max-width: 450px){
+@media only screen and (max-width: 750px){
     .container{
         color:white;
         width:97vw;
@@ -522,12 +522,11 @@ input:focus{
     left:0px;
 }
 .imgDiv{
-    width:350px;
-    right:0px;
+    max-width:350px;
+    margin:auto;
 }
 .commonCategories{
-    top:35vh;
-    left:10px;
+    top:25vh;
     width:300px;
     margin:auto;
     margin-left:18px;
